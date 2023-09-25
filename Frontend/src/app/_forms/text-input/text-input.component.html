@@ -1,0 +1,25 @@
+<div class="d-flex flex-row align-items-center mb-4">
+    <!-- <i class="fas fa-lock fa-lg me-3 fa-fw"></i> -->
+    <div class="form-outline flex-fill mb-0">
+        <input type="{{type}}" id="" class="form-control" [formControl]="control"
+            [class.is-invalid]="control.touched && control.invalid" />
+        <div class="invalid-feedback" *ngIf="control.errors?.['required']">
+            Please enter a {{label}}
+        </div>
+
+        <div class="invalid-feedback" *ngIf="control.errors?.['minlength']">
+            {{label}} must be at least {{control.errors?.['minlength'].requiredLength}} characters!
+        </div>
+
+        <div class="invalid-feedback" *ngIf="control.errors?.['maxlength']">
+            {{label}} must be at most {{control.errors?.['maxlength'].requiredLength}} characters!
+        </div>
+
+        <div class="invalid-feedback" *ngIf="control.errors?.['notMatching']">
+            Passwords do not match!
+        </div>
+
+
+        <label class="form-label" for="">{{label}}</label>
+    </div>
+</div>

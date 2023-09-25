@@ -1,0 +1,97 @@
+<section class="vh-100">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                                <form [formGroup]="registerForm" (ngSubmit)="register()" class="mx-1 mx-md-4"
+                                    autocomplete="off">
+
+                                    <!-- <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                       
+                                    </div> -->
+
+                                    <app-text-input [formControl]="$any(registerForm.controls['username'])"
+                                        [label]="'Username'">
+                                    </app-text-input>
+
+                                    <app-text-input [formControl]="$any(registerForm.controls['password'])"
+                                        [label]="'Password'" [type]="'password'">
+
+                                    </app-text-input>
+
+                                    <app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])"
+                                        [label]="'Confirm Password'" [type]="'password'">
+                                    </app-text-input>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fa-solid fa-venus-mars fa-2xl"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label style="margin-right: 10px;"> I am a</label>
+                                            <label class="form-check-label" style="margin-right: 10px;">
+                                                <input type="radio" class="form-check-input" value="male"
+                                                    formControlName="gender">
+                                                Male
+                                            </label>
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" value="female"
+                                                    formControlName="gender">
+                                                Female
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+
+                                    <app-text-input [formControl]="$any(registerForm.controls['knownAs'])"
+                                        [label]="'Known As'">
+                                    </app-text-input>
+
+                                    <app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])"
+                                        [label]="'Date Of Birth'" [maxDate]="maxDate">
+                                    </app-date-picker>
+
+                                    <app-text-input [formControl]="$any(registerForm.controls['country'])"
+                                        [label]="'Country'">
+                                    </app-text-input>
+
+                                    <app-text-input [formControl]="$any(registerForm.controls['city'])"
+                                        [label]="'City'">
+                                    </app-text-input>
+
+                                    <div *ngIf="validationErrors">
+                                        <ul class="text-danger">
+                                            <li *ngFor="let error of validationErrors">
+                                                {{error}}
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <button (click)="register()" [disabled]="!registerForm.valid" type="button"
+                                            class="btn btn-primary btn-lg">Register</button>
+                                    </div>
+                                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <button (click)="cancel()" type="button"
+                                            class="btn btn-default btn-lg">Cancel</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                    class="img-fluid" alt="Sample image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

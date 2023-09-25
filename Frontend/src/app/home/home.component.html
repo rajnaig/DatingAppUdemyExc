@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <div *ngIf="!registerMode" style="text-align: center;">
+        <h1>NullReferenceException in your love life?</h1>
+        <h2>We've got you covered!</h2>
+        <p class="lead">Tired of unhandled exceptions in your dating life? Let's catch them together. Just sign up and
+            watch your <code>&lt;love life/&gt;</code> compile without errors.</p>
+        <div class="text-center">
+            <button (click)="registerToggle()" class="btn btn-warning btn-lg me-2">
+                Start Debugging Your Love Life
+            </button>
+
+            <button type="button" class="btn btn-success btn-lg">Understand Our Algorithm</button>
+        </div>
+    </div>
+
+    <div *ngIf="registerMode" class="container">
+        <app-register (cancelRegister)="cancelRegistration($event)"></app-register>
+    </div>
+</div>
